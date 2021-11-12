@@ -1,0 +1,20 @@
+<resources>
+  <string name="app_name">UtilityBills</string>
+  <string name="ok">Ок</string>
+  <string name="cancel">Закрити</string>
+
+  <string-array name="month_names">
+    <item>Січень</item>
+    <item>Лютий</item>
+    <item>Березень</item>
+    <item>Квітень</item>
+    <item>Травень</item>
+    <item>Червень</item>
+    <item>Липень</item>
+    <item>Серпень</item>
+    <item>Вересень</item>
+    <item>Жовтень</item>
+    <item>Листопад</item>
+    <item>Грудень</item>
+  </string-array>
+</resources>
