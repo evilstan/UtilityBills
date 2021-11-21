@@ -5,13 +5,47 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   tools:context=".activities.MainActivity">
-  <TextView
+
+  <ListView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@+id/card1"
+    app:layout_constraintStart_toStartOf="parent"
+    android:id="@+id/list_meters"/>
+
+
+  <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    android:id="@+id/add_apartments"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Hello World!"
+    android:layout_margin="16dp"
+    android:text="@string/add_apartments_title"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    app:layout_constraintEnd_toEndOf="parent" />
+
+  <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    android:id="@+id/testDB"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:text="Test DataBase"
+    app:layout_constraintBottom_toTopOf="@+id/add_apartments"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+  <com.google.android.material.card.MaterialCardView
+    android:id="@+id/card1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <ImageView
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:src="@drawable/flaticon" />
+
+  </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,8 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/alexp/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/alexp/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_2.xml" value="0.22760416666666666" />
+        <entry key="..\:/Users/alexp/OneDrive/Android/UtilityBills/app/src/main/res/layout/activity_add_apartment.xml" value="0.33" />
+        <entry key="..\:/Users/alexp/OneDrive/Android/UtilityBills/app/src/main/res/layout/activity_main.xml" value="0.3307291666666667" />
         <entry key="..\:/Users/alexp/OneDrive/Android/UtilityBills/app/src/main/res/layout/activity_new_flat.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/alexp/OneDrive/Android/UtilityBills/app/src/main/res/layout/content_start.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/alexp/OneDrive/Android/UtilityBills/app/src/main/res/layout/date_picker_dialog.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/alexp/OneDrive/Android/UtilityBills/app/src/main/res/layout/header_navigation_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/alexp/OneDrive/Android/UtilityBills/app/src/main/res/layout/layout.xml" value="0.19114583333333332" />
+        <entry key="..\:/Users/alexp/OneDrive/Android/UtilityBills/app/src/main/res/layout/list_item.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/alexp/OneDrive/Android/UtilityBills/app/src/main/res/layout/meters_picker_dialog.xml" value="0.5" />
+        <entry key="..\:/Users/alexp/OneDrive/Android/UtilityBills/app/src/main/res/layout/navigation_drawer_layout.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/alexp/OneDrive/Android/UtilityBills/app/src/main/res/layout/other_payment_picker_dialog.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

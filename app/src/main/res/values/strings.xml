@@ -1,7 +1,50 @@
 <resources>
   <string name="app_name">UtilityBills</string>
   <string name="ok">Ок</string>
-  <string name="cancel">Закрити</string>
+  <string name="cancel">Закрыть</string>
+
+  <string name="main_activity_title">StartActivity</string>
+  <string name="navigation_drawer_open">Open navigation drawer</string>
+  <string name="navigation_drawer_close">Close navigation drawer</string>
+  <string name="nav_header_title">Android Studio</string>
+  <string name="nav_header_subtitle">android.studio@android.com</string>
+  <string name="nav_header_desc">Navigation header</string>
+  <string name="action_settings">Settings</string>
+  <string name="menu_home">Home</string>
+  <string name="top_app_bar">MyDrawer</string>
+  <string name="placement">Расположение (например, \"в ванной\") </string>
+  <string name="add_number">Заводской № (не обязательно) </string>
+  <string name="add_tariff">Общий тариф за единицу </string>
+  <string name="payment_name">Название платежа </string>
+  <string name="payment_cost">Сумма в месяц </string>
+  <string name="select_type">Тип счётчика </string>
+  <string name="add_meter">Добавить счётчик </string>
+  <string name="add_payment">Добавить платеж </string>
+  <string name="payment_for">Платеж за\ </string>
+  <string name="cost">\ стоимость\ </string>
+  <string name="cost_per_one">\ стоимость за единицу\ </string>
+  <string name="cancel_selector">Отмена</string>
+  <string name="meter_type_picker_title">Добавление нового счетчика</string>
+  <string name="add_apartments_title">Добавить квартиру</string>
+  <string name="finish">Закончить настройку</string>
+  <string name="apartments_address">Название квартиры (например, \"Мой дом\")</string>
+  <string name="apartments_address_hint">s</string>
+  <string name="meter">Счётчик</string>
+  <string name="of_hot_water">Счётчик горячей воды\ </string>
+  <string name="of_cold_water">Счётчик холодной воды\ </string>
+  <string name="of_heat_joules">Счётчик тепла (джоули)\ </string>
+  <string name="of_heat_calories">Счётчик тепла (калории)\ </string>
+  <string name="of_electricity">Счётчик электричества\ </string>
+  <string name="of_gas">Счётчик природного газа\ </string>
+  <string name="in">\ в\ </string>
+  <string name="number">\ номер\ </string>
+  <string name="current_value">Текущие показания </string>
+
+
+
+  <string name="menu_gallery">Gallery</string>
+  <string name="menu_slideshow">Slideshow</string>
+  <string name="hello_blank_fragment">Hello blank fragment</string>
 
   <string-array name="month_names">
     <item>Січень</item>
@@ -16,5 +59,15 @@
     <item>Жовтень</item>
     <item>Листопад</item>
     <item>Грудень</item>
+  </string-array>
+
+  <!-- TODO: Remove or change this placeholder text -->
+  <string-array name="meters_types">
+    <item>Горячая вода</item>
+    <item>Холодная вода</item>
+    <item>Тепло (единицы гигаджоули)</item>
+    <item>Тепло (единицы гигакалории)</item>
+    <item>Электричество</item>
+    <item>Природный газ</item>
   </string-array>
 </resources>

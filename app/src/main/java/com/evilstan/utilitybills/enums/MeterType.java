@@ -1,4 +1,4 @@
-package com.evilstan.utilitybills;
+package com.evilstan.utilitybills.enums;
 
 public enum MeterType {
     HOT_WATER,

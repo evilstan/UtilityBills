@@ -1,4 +1,4 @@
-package com.evilstan.utilitybills;
+package com.evilstan.utilitybills.dialogs;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.NumberPicker;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
+import com.evilstan.utilitybills.R;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 public class MonthYearPickerDialog extends DialogFragment {
 
@@ -35,10 +37,11 @@ public class MonthYearPickerDialog extends DialogFragment {
 
         final String[] MONTH_NAMES = getResources().getStringArray(R.array.month_names);
 
+        int month = Calendar.getInstance(TimeZone.getDefault()).get(Calendar.MONTH);
         monthPicker.setMinValue(0);
         monthPicker.setMaxValue(11);
-
         monthPicker.setDisplayedValues(MONTH_NAMES);
+        monthPicker.setValue(month);
 
         int year = cal.get(Calendar.YEAR);
         yearPicker.setMinValue(MIN_YEAR);
@@ -46,7 +49,6 @@ public class MonthYearPickerDialog extends DialogFragment {
         yearPicker.setValue(year);
 
         builder.setView(dialog)
-            // Add action buttons
             .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int id) {

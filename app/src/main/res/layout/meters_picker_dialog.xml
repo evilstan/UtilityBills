@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <com.google.android.material.textfield.TextInputEditText
+    android:id="@+id/name_picker"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:hint="@string/placement"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/type_picker" />
+
+  <com.google.android.material.textfield.TextInputEditText
+    android:id="@+id/id_picker"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:hint="@string/add_number"
+    android:inputType="number"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/name_picker" />
+
+  <com.google.android.material.textfield.TextInputEditText
+    android:id="@+id/cost_picker"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:layout_marginTop="50dp"
+    android:hint="@string/add_tariff"
+    android:inputType="numberDecimal"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/id_picker" />
+
+  <com.google.android.material.textfield.TextInputEditText
+    android:id="@+id/value_picker"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:layout_marginTop="50dp"
+    android:hint="@string/current_value"
+    android:inputType="numberDecimal"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/cost_picker" />
+
+  <com.google.android.material.textfield.TextInputLayout
+    android:id="@+id/type_picker"
+    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="@string/select_type"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <AutoCompleteTextView
+      android:id="@+id/type_selector"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:inputType="none"
+      tools:ignore="LabelFor" />
+
+  </com.google.android.material.textfield.TextInputLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

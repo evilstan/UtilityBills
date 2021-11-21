@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.evilstan.utilitybills" >
+  package="com.evilstan.utilitybills">
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.UtilityBills" >
-        <activity
-            android:name=".activities.NewFlatActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.NewMonthlyPaymentActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.MainActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+  <application
+    android:name=".App"
+    android:allowBackup="true"
+    android:icon="@drawable/icon"
+    android:label="@string/app_name"
+    android:roundIcon="@drawable/icon"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.UtilityBills">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
+    <activity
+      android:exported="false"
+      android:name=".activities.AddApartmentActivity" />
+    <activity
+      android:exported="false"
+      android:name=".activities.AddMonthlyPaymentActivity" />
+    <activity
+      android:exported="true"
+      android:name=".activities.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+  </application>
 
 </manifest>
