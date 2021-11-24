@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+      android:id="@+id/recipient_label_TV"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="8dp"
+      android:layout_gravity="center_vertical" />
+
+    <com.google.android.flexbox.FlexboxLayout
+      android:id="@+id/flex_box"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_gravity="center_vertical"
+      app:flexWrap="wrap"
+      app:alignItems="stretch"
+      app:alignContent="space_around"
+      app:showDivider="beginning|middle|end">
+
+      <AutoCompleteTextView
+        android:id="@+id/input_payments_autocomplete"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        app:layout_flexGrow="1"
+        android:completionThreshold="1"
+        android:background="@android:color/transparent"
+        android:imeOptions="actionNext"
+        android:inputType="text"/>
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+  </LinearLayout>
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recipients_list_RV"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone" />
+</LinearLayout>

@@ -1,4 +1,4 @@
-package com.evilstan.utilitybills;
+package com.evilstan.utilitybills.data;
 
 import android.content.Context;
 import android.content.SharedPreferences;

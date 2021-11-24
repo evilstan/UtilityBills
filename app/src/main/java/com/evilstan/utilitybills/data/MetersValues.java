@@ -1,10 +1,15 @@
-package com.evilstan.utilitybills;
+package com.evilstan.utilitybills.data;
 
 import android.os.Build.VERSION_CODES;
 import androidx.annotation.RequiresApi;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+import com.evilstan.utilitybills.App;
+import com.evilstan.utilitybills.AppDataBase;
 import com.evilstan.utilitybills.interfaces.Gauge;
+import com.evilstan.utilitybills.interfaces.daos.MeterDao;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +22,9 @@ public class MetersValues {
     private int year;
     private int month;
 
+    @Ignore
     private List<Gauge> meters;
+
     private Map<Integer, Double> values;
 
     public MetersValues(){
@@ -36,6 +43,20 @@ public class MetersValues {
             int id = meter.getId();
             double value = meter.getCurrentValue();
         });
+    }
+
+    private void fillGauges(){
+        meters = new ArrayList<>();
+        AppDataBase db = App.getInstance().getDatabase();
+        MeterDao meterDao = db.meterDao();
+
+        for (Integer id : values.keySet()) {
+            Meter meter = meterDao.getById(id);
+            Double value = values.get(id);
+            meter.setCurrentValue(value);
+            meters.add(meter);
+        }
+
     }
 
     public int getId() {

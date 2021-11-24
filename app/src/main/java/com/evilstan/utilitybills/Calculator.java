@@ -1,5 +1,8 @@
 package com.evilstan.utilitybills;
 
+import com.evilstan.utilitybills.data.Apartment;
+import com.evilstan.utilitybills.data.MetersValues;
+import com.evilstan.utilitybills.data.Tariff;
 import com.evilstan.utilitybills.enums.MeterType;
 import com.evilstan.utilitybills.interfaces.Gauge;
 import java.util.List;
@@ -9,9 +12,10 @@ public class Calculator {
 
     private double totalCost;
 
-    private Map<String, Double> utilityPaysValues;
+    private Map<String, Double> utilityPayments;
     private List<Gauge> meters;
     private Tariff tariff;
+    MetersValues metersValues;
 
     private final Double JOULE_TO_CALORIE_COEFFICIENT = 0.23885;
 
@@ -20,14 +24,10 @@ public class Calculator {
         this.tariff = new Tariff();
     }
 
-    public Calculator(List<Gauge> meters, Tariff tariff) {
-        this.tariff = tariff;
-        this.meters = meters;
-    }
-
     public Calculator(Apartment apartment) {
         this.tariff = apartment.getTariff();
         this.meters = apartment.getMetersList();
+        this.utilityPayments = tariff.getUtilityPayments();
     }
 
 
@@ -39,24 +39,11 @@ public class Calculator {
             metersCost += calculateMetersExpenses(meter);
         }
 
-        for (Double value : tariff.getUtilityPayments().values()) {
+        for (Double value : utilityPayments.values()) {
             utilityCost += value;
         }
 
         this.totalCost = metersCost + utilityCost;
-    }
-
-
-    public double getTotalCost() {
-        return totalCost;
-    }
-
-    public Tariff getTariffs() {
-        return tariff;
-    }
-
-    public void setTariffs(Tariff tariff) {
-        this.tariff = tariff;
     }
 
     private double calculateMetersExpenses(Gauge gauge) {
@@ -78,9 +65,21 @@ public class Calculator {
                 return value * tariff.getColdWaterCost();
             case ELECTRICITY:
                 return value * tariff.getElectricityCost();
-
             default:
                 return 0;
         }
+    }
+
+
+    public double getTotalCost() {
+        return totalCost;
+    }
+
+    public Tariff getTariffs() {
+        return tariff;
+    }
+
+    public void setTariffs(Tariff tariff) {
+        this.tariff = tariff;
     }
 }

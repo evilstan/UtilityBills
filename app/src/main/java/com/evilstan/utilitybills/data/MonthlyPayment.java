@@ -1,36 +1,39 @@
-package com.evilstan.utilitybills;
+package com.evilstan.utilitybills.data;
 
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import com.evilstan.utilitybills.enums.MeterType;
 import com.evilstan.utilitybills.interfaces.Gauge;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+@Entity(tableName = "monthly_payment" ,foreignKeys = @ForeignKey(entity = Tariff.class,parentColumns = "apartment_id", childColumns = "ta"))
 public class MonthlyPayment {
 
-    private final List<Gauge> meters;
+    private List<Gauge> meters;
 
     private int month;
     private int year;
 
     private double totalCost;
+    private int tariffId;
 
-    private Map<String, Double> utilityPaysValues;
+    @Ignore
     private Tariff tariff;
-    MetersValues metersValues;
+    @Ignore
+    private MetersValues metersValues;
 
     private final Double JOULE_TO_CALORIE_COEFFICIENT = 0.2388458966275;
 
     public MonthlyPayment() {
-        this.meters = new ArrayList<>();
-        this.tariff = new Tariff();
-        this.month = 0;
-        this.year = 2021;
+
     }
 
-    public MonthlyPayment(int month, int year, List<Gauge> meters, Tariff tariff) {
-        this.meters = meters;
-        this.tariff = tariff;
+    public MonthlyPayment(int month, int year, Apartment apartment) {
+        this.meters = apartment.getMetersList();
+        this.tariff = apartment.getTariff();
         this.month = month;
         this.year = year;
         metersValues = new MetersValues(month, year, meters);
@@ -116,6 +119,41 @@ public class MonthlyPayment {
         }
     }
 
+    public List<Gauge> getMeters() {
+        return meters;
+    }
+
+    public void setMeters(List<Gauge> meters) {
+        this.meters = meters;
+    }
+
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
+    }
+
+    public int getTariffId() {
+        return tariffId;
+    }
+
+    public void setTariffId(int tariffId) {
+        this.tariffId = tariffId;
+    }
+
+    public Tariff getTariff() {
+        return tariff;
+    }
+
+    public void setTariff(Tariff tariff) {
+        this.tariff = tariff;
+    }
+
+    public MetersValues getMetersValues() {
+        return metersValues;
+    }
+
+    public void setMetersValues(MetersValues metersValues) {
+        this.metersValues = metersValues;
+    }
 
     public double getTotalCost() {
         return totalCost;

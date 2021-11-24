@@ -3,14 +3,22 @@
   package="com.evilstan.utilitybills">
 
   <application
-    android:name=".App"
     android:allowBackup="true"
     android:icon="@drawable/icon"
     android:label="@string/app_name"
+    android:name=".App"
     android:roundIcon="@drawable/icon"
     android:supportsRtl="true"
     android:theme="@style/Theme.UtilityBills">
-
+    <activity
+      android:exported="false"
+      android:name=".activities.Test" />
+    <activity
+      android:exported="false"
+      android:name=".activities.FirstLaunchKt" />
+    <activity
+      android:exported="false"
+      android:name=".activities.FirstLaunchSettingActivity" />
     <activity
       android:exported="false"
       android:name=".activities.AddApartmentActivity" />

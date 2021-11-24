@@ -2,6 +2,9 @@ package com.evilstan.utilitybills;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;
+import com.evilstan.utilitybills.data.Apartment;
+import com.evilstan.utilitybills.data.Meter;
+import com.evilstan.utilitybills.data.Tariff;
 import com.evilstan.utilitybills.interfaces.daos.ApartmentDao;
 import com.evilstan.utilitybills.interfaces.daos.MeterDao;
 import com.evilstan.utilitybills.interfaces.daos.TariffDao;

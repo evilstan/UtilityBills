@@ -3,29 +3,33 @@ package com.evilstan.utilitybills.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
-import com.evilstan.utilitybills.Apartment;
 import com.evilstan.utilitybills.App;
 import com.evilstan.utilitybills.AppDataBase;
-import com.evilstan.utilitybills.Meter;
 import com.evilstan.utilitybills.R;
+import com.evilstan.utilitybills.data.Apartment;
+import com.evilstan.utilitybills.data.Meter;
 import com.evilstan.utilitybills.interfaces.daos.ApartmentDao;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,
+    AdapterView.OnItemClickListener {
 
     ListView metersListView;
     ExtendedFloatingActionButton addApartmentButton;
     ExtendedFloatingActionButton testButton;
     MaterialCardView cardView;
+    boolean firstRun = true;
 
     public static Context context;
 
@@ -44,6 +48,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (firstRun) {
+            Intent intent = new Intent(MainActivity.this, FirstLaunchKt.class);
+            startActivity(intent);
+
+        }
+
         setTitle(getResources().getString(R.string.main_activity_title));
         init();
     }
@@ -62,6 +73,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             android.R.layout.simple_list_item_1, adapterList);
 
         metersListView.setAdapter(metersAdapter);
+
+        readSharedPreferences();
+    }
+
+    private void readSharedPreferences() {
+        SharedPreferences sPref = PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
+        firstRun = sPref.getBoolean("FirstRun", true);
+        SharedPreferences.Editor sPrefEdit = sPref.edit();
+        sPrefEdit.putBoolean("FirstRun", false);
+        sPrefEdit.apply();
     }
 
     private void addApartment() {
@@ -98,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Intent intent = new Intent(context, AddMonthlyPaymentActivity.class);
-        intent.putExtra("apartment_id", apartments.get(0).getId());
+        intent.putExtra("apartment_id", apartments.get(i).getId());
         startActivity(intent);
     }
 }

@@ -1,4 +1,4 @@
-package com.evilstan.utilitybills;
+package com.evilstan.utilitybills.data;
 
 
 import androidx.room.ColumnInfo;
@@ -6,6 +6,7 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
+import com.evilstan.utilitybills.MapConverter;
 import com.evilstan.utilitybills.enums.MeterType;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -17,7 +18,8 @@ import java.util.Map;
 @Entity(tableName = "tariff", foreignKeys = @ForeignKey(entity = Apartment.class, parentColumns = "id", childColumns = "apartment_id"))
 public class Tariff {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
+    int id;
     @ColumnInfo(name = "apartment_id")
     private int apartmentId;
     @ColumnInfo(name = "cold_water_cost")
@@ -34,20 +36,10 @@ public class Tariff {
     @TypeConverters({MapConverter.class})
     private Map<String, Double> utilityPayments;
 
-/*    public Tariff(){
-        utilityPayments = new LinkedHashMap<>();
-    }*/
 
     public Tariff() {
-/*        coldWaterCost = 0;
-        hotWaterCost = 0;
-        heatCost = 0;
-        electricityCost = 0;
-        gasCost = 0;
-        utilityPayments = new LinkedHashMap<>();*/
+        utilityPayments = new LinkedHashMap<>();
     }
-
-    //TODO make read from sharedPreferences
 
     public void setCost(MeterType meterType, Double cost) {
         switch (meterType) {
@@ -78,6 +70,14 @@ public class Tariff {
             s += "; " + key + " = " + utilityPayments.get(key);
         }
         return s;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Map<String, Double> getUtilityPayments() {

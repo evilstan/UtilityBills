@@ -29,17 +29,66 @@
   <string name="finish">Закончить настройку</string>
   <string name="apartments_address">Название квартиры (например, \"Мой дом\")</string>
   <string name="apartments_address_hint">s</string>
+  <string name="in">\ в\ </string>
+  <string name="number">\ номер\ </string>
+  <string name="current_value">Текущие показания </string>
+  <string name="date_picket_title">Выберите период </string>
+  <string name="meters_values_picker_title">Введите текущие показания счетчиков </string>
+
+
+  <string name="what_meter_do_u_use">Какими счётчиками вы пользуетесь дома? </string>
+
+  <string name="hot_water">Горячей воды\ </string>
+  <string name="cold_water">Холодной воды\ </string>
+  <string name="heat_joules">Тепла (джоули)\ </string>
+  <string name="heat_calories">Тепла (калории)\ </string>
+  <string name="heat">Тепла\ </string>
+  <string name="electricity">Электричества\ </string>
+  <string name="gas">Природного газа\ </string>
+
   <string name="meter">Счётчик</string>
   <string name="of_hot_water">Счётчик горячей воды\ </string>
   <string name="of_cold_water">Счётчик холодной воды\ </string>
   <string name="of_heat_joules">Счётчик тепла (джоули)\ </string>
   <string name="of_heat_calories">Счётчик тепла (калории)\ </string>
+  <string name="of_heat">Счётчик тепла\ </string>
   <string name="of_electricity">Счётчик электричества\ </string>
   <string name="of_gas">Счётчик природного газа\ </string>
-  <string name="in">\ в\ </string>
-  <string name="number">\ номер\ </string>
-  <string name="current_value">Текущие показания </string>
 
+  <string name="done_button_text">Начать </string>
+  <string name="add_payments">Добавьте ежемесячные платежи </string>
+  <string name="add_other_payments">Какие еще счета вы оплачиваете </string>
+  <string name="internet_TV">Например, \"Интернет\" </string>
+  <string name="add">Добавить</string>
+  <string name="type_payment_press_add">Напишите название и нажмите \"Добавить\"</string>
+
+  <string name="how_many_water_meters">Сколько у вас счетчиков воды </string>
+  <string name="hot">Горячей </string>
+  <string name="cold">Холодной </string>
+  <string name="one">Один </string>
+  <string name="two">Два </string>
+  <string name="group_one_placement">Укажите, где находится первый </string>
+  <string name="group_two_placement">и второй (например \"в ванной\", \"на кухне\") </string>
+
+  <string name="add_tariff_now">Добавить тарифы </string>
+  <string name="want_add_tariff_now">Вы хотите добавить тарифы по выбранным платежам? Это можно сделать позже при добавлении первого платежа </string>
+  <string name="yes">Да, добавить </string>
+  <string name="no">Нет, позже</string>
+
+  <string name="screen_1_title">Добро пожаловать! </string>
+  <string name="screen_2_title">Счётчики </string>
+  <string name="screen_3_title">Платежи </string>
+  <string name="screen_4_title">Функции </string>
+  <string name="screen_5_title">Быстрая настройка </string>
+
+  <string name="screen_1_text">Ваши домашние платежи в одном приложениии </string>
+  <string name="screen_2_text">Платежи по счетчикам </string>
+  <string name="screen_3_text">Все виды бытових платежей </string>
+  <string name="screen_4_text">Напоминания, хранение истории, экономия и статистика </string>
+  <string name="screen_5_text">Приступим к первоначальной настройке. Это займет не более 5 минут </string>
+
+  <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed lacus et diam ultrices luctus. </string>
+  <string name="lorem_ipsum2">Fusce nec justo efficitur, consequat nibh at, lacinia urna. Donec ut sapien eget nunc ultricies. </string>
 
 
   <string name="menu_gallery">Gallery</string>
@@ -47,6 +96,50 @@
   <string name="hello_blank_fragment">Hello blank fragment</string>
 
   <string-array name="month_names">
+    <item>Январь</item>
+    <item>Февраль</item>
+    <item>Март</item>
+    <item>Апрель</item>
+    <item>Май</item>
+    <item>Июнь</item>
+    <item>Июль</item>
+    <item>Август</item>
+    <item>Сентябрь</item>
+    <item>Октябрь</item>
+    <item>Ноябрь</item>
+    <item>Декабрь</item>
+  </string-array>
+
+  <string-array name="payments_names">
+    <item>Отопление</item>
+    <item>Телефон</item>
+    <item>Мусор</item>
+    <item>Вывоз мусора</item>
+    <item>Интернет</item>
+    <item>Телевизор</item>
+    <item>Телик</item>
+    <item>Инет</item>
+    <item>Коммуналка</item>
+    <item>За квартиру</item>
+    <item>Обслуживание придомовой территоии</item>
+    <item>Вода</item>
+    <item>За воду</item>
+    <item>Школа</item>
+    <item>Садик</item>
+    <item>Питание</item>
+    <item>Проездной</item>
+    <item>Проезд</item>
+    <item>Мобильный телефон</item>
+    <item>Ютуб</item>
+    <item>Музыка</item>
+    <item>Игра</item>
+    <item>Аренда</item>
+    <item>Прокат</item>
+  </string-array>
+
+
+
+  <!--  <string-array name="month_names">
     <item>Січень</item>
     <item>Лютий</item>
     <item>Березень</item>
@@ -59,7 +152,7 @@
     <item>Жовтень</item>
     <item>Листопад</item>
     <item>Грудень</item>
-  </string-array>
+  </string-array>-->
 
   <!-- TODO: Remove or change this placeholder text -->
   <string-array name="meters_types">

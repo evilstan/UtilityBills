@@ -5,8 +5,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
-import com.evilstan.utilitybills.Meter;
-import com.evilstan.utilitybills.Tariff;
+import com.evilstan.utilitybills.data.Tariff;
 import java.util.List;
 
 @Dao

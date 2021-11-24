@@ -1,4 +1,4 @@
-package com.evilstan.utilitybills;
+package com.evilstan.utilitybills.data;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -6,6 +6,8 @@ import android.preference.PreferenceManager;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+import com.evilstan.utilitybills.App;
+import com.evilstan.utilitybills.AppDataBase;
 import com.evilstan.utilitybills.activities.MainActivity;
 import com.evilstan.utilitybills.interfaces.Gauge;
 import com.evilstan.utilitybills.interfaces.daos.MeterDao;
@@ -21,10 +23,10 @@ public class Apartment {
 
     private String name;
 
-    @Ignore //SELECT * FROM meters WHERE ApartmentId = :this.id
+    @Ignore
     List<Gauge> metersList;
 
-    @Ignore //SELECT * FROM tariff WHERE ApartmentId = :this.id
+    @Ignore
     private Tariff tariff;
 
     public Apartment() {
